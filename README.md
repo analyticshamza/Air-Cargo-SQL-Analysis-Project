@@ -21,6 +21,9 @@ This SQL project analyzes air cargo and passenger data using a relational databa
 ````
 
 ---
+## 🗃️ ER Diagram
+
+![image](https://github.com/user-attachments/assets/81c01912-311a-4e2e-9578-c3bdb7517ae8)
 
 ## 🏗️ Setup Instructions
 
@@ -42,6 +45,7 @@ This script:
 
 ---
 
+
 ### 2. Import Data
 
 Import the `.csv` files into the respective tables using MySQL Workbench or any other tool:
@@ -58,12 +62,6 @@ Import the `.csv` files into the respective tables using MySQL Workbench or any 
 ```sql
 INSERT INTO aircraft (aircraft_id)
 SELECT DISTINCT aircraft_id FROM routes;
-
----
-
-## 🗃️ ER Diagram
-
-![Image](https://github.com/user-attachments/assets/12a2ebc2-c32c-48ae-9341-246ebd24801c)
 
 ---
 
