@@ -1,0 +1,63 @@
+create database AirCargo;
+use AirCargo;
+
+CREATE TABLE `customer` (
+  `customer_id` int PRIMARY KEY,
+  `first_name` varchar(50),
+  `last_name` varchar(50),
+  `date_of_birth` date,
+  `gender` varchar(50)
+);
+
+CREATE TABLE `routes` (
+  `route_id` int PRIMARY KEY,
+  `flight_num` int,
+  `origin_airport` varchar(50),
+  `destination_airport` varchar(50),
+  `aircraft_id` varchar(50),
+  `distance_miles` int
+);
+
+CREATE TABLE `aircraft` (
+  `aircraft_id` varchar(50) PRIMARY KEY
+);
+
+
+CREATE TABLE `passengers_on_flights` (
+  `customer_id` int,
+  `aircraft_id` varchar(50),
+  `route_id` int,
+  `depart` varchar(50),
+  `seat_num` varchar(50),
+  `class_id` varchar(50),
+  `travel_date` date,
+  `flight_num` int,
+  PRIMARY KEY (`customer_id`, `travel_date`, `flight_num`)
+);
+
+ALTER TABLE Passengers_on_Flights
+ADD COLUMN arrival VARCHAR(50);
+
+CREATE TABLE `ticket_details` (
+  `ticket_id` int PRIMARY KEY,
+  `p_date` date,
+  `customer_id` int,
+  `aircraft_id` varchar(50),
+  `class_id` varchar(50),
+  `no_of_tickets` int,
+  `a_code` varchar(50),
+  `price_per_ticket` int,
+  `brand` varchar(50)
+);
+ALTER TABLE ticket_details
+MODIFY COLUMN ticket_id INT NOT NULL  AUTO_INCREMENT;
+
+ALTER TABLE `passengers_on_flights` ADD FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`);
+
+ALTER TABLE `passengers_on_flights` ADD FOREIGN KEY (`aircraft_id`) REFERENCES `aircraft` (`aircraft_id`);
+
+ALTER TABLE `passengers_on_flights` ADD FOREIGN KEY (`route_id`) REFERENCES `routes` (`route_id`);
+
+ALTER TABLE `ticket_details` ADD FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`);
+
+ALTER TABLE `ticket_details` ADD FOREIGN KEY (`aircraft_id`) REFERENCES `aircraft` (`aircraft_id`);
