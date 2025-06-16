@@ -63,7 +63,7 @@ SELECT DISTINCT aircraft_id FROM routes;
 
 ## 🗃️ ER Diagram
 
-![ER Diagram](aircargo.png)
+![Image](https://github.com/user-attachments/assets/12a2ebc2-c32c-48ae-9341-246ebd24801c)
 
 ---
 
@@ -90,11 +90,11 @@ The project includes solutions to the following tasks:
 17. Use `GROUP BY` to count tickets and total cost per customer
 18. Calculate average number of passengers per route
 
-All tasks and outputs are documented in [`Air_Cargo_Analysis_Project.pdf`](Air_Cargo_Analysis_Project.pdf).
+All tasks and outputs are documented in [`Air_Cargo_Analysis_Project.pdf`].
 
 ---
 
-## 🧠 Tech Used
+## 🧠 Technology Used
 
 * MySQL Workbench
 * dbdiagram.io (for ER diagram)
